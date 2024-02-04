@@ -5,6 +5,22 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "cliente")
 public class Cliente {
+    
+    public Cliente() {
+    }
+    
+    public Cliente(Integer id) {
+        this.id = id;
+    }
+
+    public Cliente(Integer id, String nombre, String usuario, String password, String email) {
+        this.id = id;
+        this.nombre = nombre;
+        this.usuario = usuario;
+        this.password = password;
+        this.email = email;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idCliente", nullable = false)
