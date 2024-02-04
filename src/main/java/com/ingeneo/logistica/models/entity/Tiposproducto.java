@@ -18,6 +18,17 @@ public class Tiposproducto {
 
     @Column(name = "transporte", nullable = false, length = 45)
     private String transporte;
+    
+
+    public Tiposproducto() {
+    }
+
+    public Tiposproducto(Integer id, Integer idCliente, String tiposProducto, String transporte) {
+        this.id = id;
+        this.idCliente = idCliente;
+        this.tiposProducto = tiposProducto;
+        this.transporte = transporte;
+    }
 
     public Integer getId() {
         return id;
