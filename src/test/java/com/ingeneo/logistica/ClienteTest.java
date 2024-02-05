@@ -43,15 +43,11 @@ public class ClienteTest {
     }
     @Test
     public void testLoginConCredencialesValidas() {
-        // Arrange
         Map<String, Object> loginRequest = new HashMap<>();
         loginRequest.put("email", "rumarfo6@gmail.com");
         loginRequest.put("password", "12345");
-
-        // Act
         ResponseEntity<Object> response = clienteController.login(loginRequest);
 
-        // Assert
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertNotNull(response.getBody());
 
