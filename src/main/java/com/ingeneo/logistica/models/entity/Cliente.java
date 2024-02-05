@@ -8,11 +8,6 @@ public class Cliente {
     
     public Cliente() {
     }
-    
-    public Cliente(Integer id) {
-        this.id = id;
-    }
-
     public Cliente( String nombre, String usuario, String password, String email) {
         this.nombre = nombre;
         this.usuario = usuario;

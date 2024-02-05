@@ -33,12 +33,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RestController
 @RequestMapping("/api")
 public class ClienteController {
-    @Autowired
-	private ClienteRepositorio clienteRepositorio;
+    private final ClienteRepositorio clienteRepositorio;
     @Autowired
     private TiposProductoRepositorio tiposRepositorio;
     @Autowired
     private LogisticaRepositorio logisticaRepositorio;
+
+    // Constructor que inyecta el repositorio
+    public ClienteController(ClienteRepositorio clienteRepositorio) {
+        this.clienteRepositorio = clienteRepositorio;
+    }
     
     @PostMapping("/agregar")
     public ResponseEntity<Object> agregarCliente(@RequestBody Cliente cliente) {
