@@ -13,8 +13,7 @@ public class Cliente {
         this.id = id;
     }
 
-    public Cliente(Integer id, String nombre, String usuario, String password, String email) {
-        this.id = id;
+    public Cliente( String nombre, String usuario, String password, String email) {
         this.nombre = nombre;
         this.usuario = usuario;
         this.password = password;

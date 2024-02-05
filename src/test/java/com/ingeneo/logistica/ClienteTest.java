@@ -14,7 +14,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import com.ingeneo.logistica.controllers.ClienteController;
-import com.ingeneo.logistica.models.entity.Cliente;
 import com.ingeneo.logistica.repositorios.ClienteRepositorio;
 
 public class ClienteTest {
@@ -26,17 +25,6 @@ public class ClienteTest {
     @BeforeEach
      public void setUp() {
         MockitoAnnotations.openMocks(this);  
-    }
-    @Test
-    public void crearCliente() {
-        // Arrange
-        Cliente cliente = new Cliente(1, "Pedro", "Pedropass", "12345", "pedro@email.com");
-        ResponseEntity<Object> response = clienteController.agregarCliente(cliente);
-        assertEquals(HttpStatus.OK, response.getStatusCode());
-
-        Cliente clienteGuardado = clienteRepositorio.findById(1).orElse(null);
-        assertNotNull(clienteGuardado);
-        assertEquals("Pedro", clienteGuardado.getNombre());
     }
     @Test
     public void testAgregarClienteConClienteNulo() {

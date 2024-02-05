@@ -52,7 +52,7 @@ public class ClienteController {
         String email = (String) loginRequest.get("email");
         String password = (String) loginRequest.get("password");
 
-        Cliente cliente = clienteRepositorio.findByCorreoAndContrasena(email, password);
+        Cliente cliente = clienteRepositorio.findByEmailAndPassword(email, password);
         if (cliente != null) {
             Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
             String token = Jwts.builder()
